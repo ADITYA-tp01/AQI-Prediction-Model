@@ -91,17 +91,16 @@ Raw Data → Cleaning → EDA → Feature Engineering → Model Training → Eva
 
 ## 🏆 Models & Results
 
-| Rank | Model | MAE | RMSE | R² | MAPE |
-|------|-------|-----|------|----|------|
-| 1 | XGBoost (Tuned) | — | — | — | — |
-| 2 | LightGBM | — | — | — | — |
-| 3 | CatBoost | — | — | — | — |
-| 4 | Random Forest | — | — | — | — |
-| 5 | LSTM | — | — | — | — |
-| 6 | Decision Tree | — | — | — | — |
-| 7 | Linear Regression | — | — | — | — |
-
-> *Run the notebook to populate actual metrics.*
+| Rank | Model | MAE | RMSE | R² | MAPE (%) |
+|------|-------|-----|------|----|----------|
+| 1 | CatBoost | 11.62 | 22.37 | 0.928 | 12.95 |
+| 2 | LightGBM | 11.50 | 22.85 | 0.925 | 11.47 |
+| 3 | XGBoost (Tuned) | 11.42 | 22.90 | 0.925 | 11.68 |
+| 4 | XGBoost (Base) | 12.05 | 23.55 | 0.921 | 13.76 |
+| 5 | Random Forest | 11.69 | 24.19 | 0.916 | 12.53 |
+| 6 | Linear Regression | 16.06 | 29.17 | 0.878 | 15.15 |
+| 7 | LSTM | 20.22 | 34.69 | 0.815 | 23.82 |
+| 8 | Decision Tree | 17.44 | 41.97 | 0.748 | 17.15 |
 
 ---
 
