@@ -5,7 +5,6 @@
 ![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-red?logo=streamlit)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/AdityaaXD/AQI-Of-India)
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-orange)](https://huggingface.co/AdityaaXD/AQI-Prediction-Model-Of-India)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 > **An end-to-end machine learning pipeline for predicting India's Air Quality Index (AQI) using pollutant data from CPCB monitoring stations (2015–2020).**
 
