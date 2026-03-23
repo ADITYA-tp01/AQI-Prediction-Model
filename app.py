@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import joblib
+import os
+from huggingface_hub import hf_hub_download
 
 # ─── Page Config ───
 st.set_page_config(
@@ -167,18 +169,28 @@ def get_aqi_info(aqi):
 
 @st.cache_resource
 def load_model():
-    model = joblib.load('models/best_xgboost_tuned.pkl')
-    scaler = joblib.load('models/scaler.pkl')
-    feature_cols = joblib.load('models/feature_cols.pkl')
+    # Fetch from Hugging Face Hub dynamically
+    repo_id = "AdityaaXD/AQI-Prediction-Model-Of-India"
+    model_path = hf_hub_download(repo_id=repo_id, filename="best_xgboost_tuned.pkl")
+    scaler_path = hf_hub_download(repo_id=repo_id, filename="scaler.pkl")
+    feature_cols_path = hf_hub_download(repo_id=repo_id, filename="feature_cols.pkl")
+    
+    model = joblib.load(model_path)
+    scaler = joblib.load(scaler_path)
+    feature_cols = joblib.load(feature_cols_path)
     return model, scaler, feature_cols
 
 @st.cache_data
 def load_data():
-    return pd.read_csv('processed/processed_city_day.csv', parse_dates=['Date'])
+    # Load processed data from the Dataset repository
+    data_path = hf_hub_download(repo_id="AdityaaXD/AQI-Of-India", repo_type="dataset", filename="processed/processed_city_day.csv")
+    return pd.read_csv(data_path, parse_dates=['Date'])
 
 @st.cache_data
 def load_results():
-    return pd.read_csv('models/model_results.csv')
+    # Load model results metrics from Hugging Face
+    results_path = hf_hub_download(repo_id="AdityaaXD/AQI-Prediction-Model-Of-India", filename="model_results.csv")
+    return pd.read_csv(results_path)
 
 
 # ─── Load everything ───
